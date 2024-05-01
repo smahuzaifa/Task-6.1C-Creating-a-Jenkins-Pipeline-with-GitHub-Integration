@@ -11,21 +11,21 @@ pipeline{
         stage('Unit and Integration Testing'){
             steps{
                 echo 'Unit testing is done to ensure the code works as per the expectations'
-                echo 'Integration testing is also done to ensure multiple components of the applications are wroking as per the expected behaviour'
+                echo 'Integration testing is also done to ensure multiple components of the applications are working as per the expected behaviour'
                 echo 'The tool used for unit testing is JUnit'
                 echo 'The tool used for integration testing is Appium'
             }
             post{
                 success {
-                    mail to: 'mention email',
+                    mail to: 'huzaifasadath@gmail.com',
                     subject: 'Unit and Integration Testing Status: Success',
                     body: 'The unit and integration testing was done successfully',
                     attachLog: true
                 }
                 failure{
-                    mail to: 'mention email',
+                    mail to: 'huzaifasadath@gmail.com',
                     subject: 'Unit and Integration Testing Status: Failed',
-                    body: 'The unit and integration testing failed. Please check the logs for details',
+                    body: 'The unit and integration testing failed. Please check the logs for details,
                     attachLog: true
                 }
             }
