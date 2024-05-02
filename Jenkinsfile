@@ -4,7 +4,7 @@ pipeline {
         stage('Build') {
             steps{
                 echo "Building the code using a build automation tool which will compile and package the code"
-                echo "The tool used is Maven."
+                echo "The tool used is Gradle"
             }
         }
         stage('Unit and integration testing') {
@@ -42,7 +42,7 @@ pipeline {
         stage('Security Scan') {
             steps {
                 echo "A security scan is performed to identify any vulnerabilities"
-                echo "The tool used is OWASP ZAP"
+                echo "The tool used is Burp Suite"
             }
             post {
                 success {
@@ -72,7 +72,7 @@ pipeline {
         stage('Integration testing on staging') {
             steps {
                 echo "Integration testing is done on the staging environment"
-                echo "The tool used is Postman"
+                echo "The tool used is JMeter and SoapUI"
             }
         }
         stage('Deploy to production') {
