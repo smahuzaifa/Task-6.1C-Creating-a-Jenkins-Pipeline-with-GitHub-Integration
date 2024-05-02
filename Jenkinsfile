@@ -18,12 +18,14 @@ pipeline {
                 success {
                     mail to: "huzaifasadath@gmail.com",
                     subject: "Unit and Integration Testing Status: Success",
-                    body: "The unit and integration testing was done successfully"
+                    body: "The unit and integration testing was done successfully",
+                    attachLog: true
                 }
                 failure {
                     mail to: "huzaifasadath@gmail.com",
                     subject: "Unit and integration testing status: Failed",
-                    body: "The unit and integration testing has failed, please check the logs for more details"
+                    body: "The unit and integration testing has failed, please check the logs for more details",
+                    attachLog: true
                 }
             }
         }
@@ -42,12 +44,14 @@ pipeline {
                 success {
                     mail to: "huzaifasadath@gmail.com",
                     subject: "Security scan - SUCCESS",
-                    body: "Security scan was conducted successfully"
+                    body: "Security scan was conducted successfully",
+                    attachLog: true
                 }
                 failure {
                     mail to: "huzaifasadath@gmail.com",
                     subject: "Security scan - FAIL",
-                    body: "Security scan failed"
+                    body: "Security scan failed",
+                    attachLog: true
                 }
             }
         }
