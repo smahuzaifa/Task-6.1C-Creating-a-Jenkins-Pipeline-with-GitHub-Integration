@@ -16,7 +16,7 @@ pipeline {
             }
             post {
                 success {
-                    emailext(
+                    emailtext(
                     to: "huzaifasadath@gmail.com",
                     subject: "Unit and Integration Testing Status: Success",
                     body: "The unit and integration testing was done successfully",
@@ -24,7 +24,7 @@ pipeline {
                     )
                 }
                 failure {
-                    emailext(
+                    emailtext(
                     to: "huzaifasadath@gmail.com",
                     subject: "Unit and integration testing status: Failed",
                     body: "The unit and integration testing has failed, please check the logs for more details",
@@ -46,7 +46,7 @@ pipeline {
             }
             post {
                 success {
-                    emailext(
+                    emailtext(
                     to: "huzaifasadath@gmail.com",
                     subject: "Security scan - SUCCESS",
                     body: "Security scan was conducted successfully",
@@ -54,7 +54,7 @@ pipeline {
                     ) 
                 }
                 failure {
-                    emailext(
+                    emailtext(
                     to: "huzaifasadath@gmail.com",
                     subject: "Security scan - FAIL",
                     body: "Security scan failed",
